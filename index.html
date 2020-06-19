@@ -111,6 +111,12 @@
             
             input.addEventListener("keyup", function(event){
                 
+               // New code block to implement with class
+                if(input.value.trim() == ""){
+                        return;
+                }
+               // New code ^^^
+                
                 let message = input.value;
                 let newMessageBox = document.createElement('div');
                 newMessageBox.classList.add("container");
@@ -119,8 +125,11 @@
                 <p>${message}</p>
                 <span class="time-right">${grabTime()}</span>`;
                 
+                
+                
                 if(event.keyCode == 13){
                     event.preventDefault();
+                    
 
                     input.value = " ";
                     chatBox.appendChild(newMessageBox);
@@ -186,7 +195,7 @@
                         response = random(["Wait, what?", "Que?", "uhh"]);
                     }  
 
-                       console.log(response); 
+                       
 
 
 
